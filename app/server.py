@@ -2,7 +2,6 @@ from app import app
 
 from flask import render_template, request, make_response, session, url_for, redirect, jsonify
 from flask import safe_join, send_from_directory, abort, flash, copy_current_request_context
-#from flask_uploads import UploadSet, configure_uploads, IMAGES, patch_request_class
 
 from torchvision import models, transforms
 from PIL import Image
@@ -50,17 +49,16 @@ def predict(img):
         outputs = dense_model.forward(image_batch)
     _, y_hat = outputs.max(1) 
     pred_index = str(y_hat.item())
-    # TODO: jsonify returns
     return ({"sucess" : True, "response" : "The imagenet class ID and class_names are" + str(class_dict[pred_index])})
 
-# TODO: Add UI with render_template()- Bootstrap
+# Future TODO: Add UI with render_template()- Bootstrap
 
-# TODO: Save images or not?
-
+# Routes
 @app.route('/')
 def index():
     return "Hello World: The server is live!"
 
+# Route for prediction
 @app.route('/upload', methods=['POST'])
 def upload():
     data = {"success" : False}
