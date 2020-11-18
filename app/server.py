@@ -1,6 +1,6 @@
 from app import app
 
-from flask import render_template, request, make_response, session, url_for, redirect
+from flask import render_template, request, make_response, session, url_for, redirect, jsonify
 from flask import safe_join, send_from_directory, abort, flash, copy_current_request_context
 #from flask_uploads import UploadSet, configure_uploads, IMAGES, patch_request_class
 
