@@ -13,7 +13,7 @@ import os, json, io
 # Load pretrained densenet model
 dense_model = models.densenet121(pretrained=True)
 # Loading dictionary to interpret densenet results
-class_dict = json.load(open("./imagenet_class_index.json"))
+class_dict = json.load(open(os.path.join(os.path.curdir, "imagenet_class_index.json")))
 # Push model to CUDA for GPU acceleration if available
 if torch.cuda.is_available():
     dense_model.to('cuda')
