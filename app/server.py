@@ -51,7 +51,7 @@ def predict(img):
     _, y_hat = outputs.max(1) 
     pred_index = str(y_hat.item())
     # TODO: jsonify returns
-    return ({"sucess" : True, "response" : "The imagenet class ID and class_names are" + str(class_dict[pred_index]))
+    return ({"sucess" : True, "response" : "The imagenet class ID and class_names are" + str(class_dict[pred_index])})
 
 # TODO: Add UI with render_template()- Bootstrap
 
