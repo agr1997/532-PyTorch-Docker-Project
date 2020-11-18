@@ -1,0 +1,13 @@
+name: docker_del
+channels:
+  - pytorch
+  - menpo
+  - conda-forge
+  - anaconda
+  - defaults
+dependencies:
+  - python=3.7
+  - flask
+  - torchvision
+prefix: C:\Users\garvi\Miniconda3\envs\docker_del
+
