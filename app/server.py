@@ -70,6 +70,5 @@ def upload():
             flash('No selected file')
             data["response" : 'No selected file']
             return jsonify(data)
-        if file and allowed_file(file.filename):
-            img = file.read()
-            return jsonify(predict(img))
+        img = file.read()
+        return jsonify(predict(img))
